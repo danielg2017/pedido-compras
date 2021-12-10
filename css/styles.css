@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+}
+
+.title1 {
+    position: relative;
+    width: 400px;
+}
+
+.title1 hr {
+    position: absolute;
+    bottom: 10px;
+    width: 400px;
+}
+
+.imgTitle{
+    width: 150px;
+    margin-left: 10px;
+}
+
+.h1 {
+    color:#2f5496;
+    font-size: 20px;
+    margin-top: 80px;
+    /* border-bottom: 1px solid black; */
+}
+
+.cont {
+    background-color: #ccc;
+    height: 400px;
+    width: 600px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.box {
+    display: flex;
+}
+
+.button{
+    width: 90px;
+
+}
+
+section
+
+.article {
+    padding:0px;
+    margin: 0px;
+
+}
+
+.table {
+    width: 100%;
+}
+
+.info {
+    width: 55%;
+}
+.cant {
+    width: 15%;
+    text-align: right;
+}
+.precio {
+    width: 15%;
+    text-align: right;
+}
+
+.stprecio {
+    width: 15%;
+    text-align: right;
+}
+
+.t_view {
+    width: 100%;
+    text-align: right;
+
+}
+
+.space {
+    margin-right: 10px;
+}
+
+
+
+

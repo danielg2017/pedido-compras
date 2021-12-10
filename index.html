@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pedido x Pantalla</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/fonts/css/all.css" />
+</head>
+
+<body>
+    <section id="cont" class="cont">
+        <header class="title">
+            <div class="title1">
+                <h1 class="h1">Lista de Compras</h1>
+                <hr />
+            </div>
+            <div class="imgTitle">
+                <img src="/asset/img/conit.png" alt="Logo ComIT" />
+            </div>
+        </header>
+
+        <article class="box">
+            <div class="space">
+                <label>Descripción</label>
+                <br />
+                <input type="text" name="anadir" id="info" />
+            </div>
+            <div class="space">
+                <label>Cantidad</label>
+                <br />
+                <input type="text" name="anadir" id="cant" />
+            </div>
+            <div class="space">
+                <label>Precio Unitario</label>
+                <br />
+                <input type="text" name="anadir" id="precio" />
+            </div>
+            <div class="space">
+                <br />
+                <button type="button" name="anadir" id="add">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                </button>
+            </div>
+        </article>
+        <hr />
+
+        <table id="table" class="table">
+            <thead>
+                <th>Descripción</th>
+                <th class="cant">Cantidad</th>
+                <th class="precio">Precio</th>
+                <th class="stprecio">Sub T.</th>
+            </thead>
+
+        </table>
+
+        <hr />
+
+        <div id="div_article" class="t_view"></div>
+        <div id="div_total" class="t_view"></div>
+
+    </section>
+
+    <!-- Recursos -->
+    <!-- click - mouseover - mouseout-->
+    <script src="js/jquery3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var almacena = 0;
+            var total = 0;
+
+            $("#add").on('click', function () {
+                var info = $("#info").val();
+                var cant = $("#cant").val();
+                var precio = $("#precio").val();
+            });
+
+            $("#add").on('click', function () {
+
+                continfo = $("#cant").val();
+                continfo = parseInt(continfo);
+
+                conta = $("#precio").val() * $("#cant").val();
+                conta = parseInt(conta);
+
+                total = conta + total;
+                total = parseInt(total);
+
+                almacena = continfo + almacena;
+                almacena = parseInt(almacena);
+
+                const linea = `
+                        <tr>
+                            <td class="info">${$('#info').val()}</td>
+                            <td class="cant">${$('#cant').val()}</td>
+                            <td class="precio">${$('#precio').val()}</td>
+                            <td class="stprecio">${conta}</td>
+                        </tr>
+                    `;
+
+                $('#table').append(linea);
+                //$('#table').append($('#info').val());
+                //$('#table').append('<td>'+$('#info').val()+'</td>');
+                ////$('#table').append($('#cant').val());
+                //$('#table').append('<td>' + $('#cant').val() + '</td>');
+                ////$('#table').append($('#precio').val());
+                //$('#table').append('<td>' + $('#precio').val() + '</td>');
+                //$('#table').append('</tr>')
+                //
+                //$('#table_total').append('<tr>')
+
+                $('#info').val("");
+                $('#cant').val("");
+                $('#precio').val("");
+
+                listview = 'Cant. Total de Articulos  ' + almacena
+                $('#div_article').text(listview)
+
+                listview = 'Total de su Compra  ' + '$  ' + total
+                $('#div_total').text(listview)
+
+
+            });
+
+        });
+    </script>
+</body>
+
+</html>
